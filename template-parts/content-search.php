@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _Underscores
+ * @package cambridge_glass_light
  */
 
 ?>
@@ -15,7 +15,7 @@
 
 		<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _Underscores_posted_on(); ?>
+			<?php cambridge_glass_light_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -25,6 +25,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php _Underscores_entry_footer(); ?>
+		<?php cambridge_glass_light_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

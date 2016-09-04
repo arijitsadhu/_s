@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _Underscores
+ * @package cambridge_glass_light
  */
 
 get_header(); ?>

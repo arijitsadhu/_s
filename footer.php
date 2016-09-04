@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _Underscores
+ * @package cambridge_glass_light
  */
 
 ?>
@@ -15,9 +15,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_Underscores' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', '_Underscores' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cambridge_glass_light' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'cambridge_glass_light' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', '_Underscores' ), '_Underscores', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'cambridge_glass_light' ), 'Cambridge Glass Light', '<a href="http://arijit.com/" rel="designer">Arijit Sadhu</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

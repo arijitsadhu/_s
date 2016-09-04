@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package _Underscores
+ * @package cambridge_glass_light
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses _Underscores_header_style()
+ * @uses cambridge_glass_light_header_style()
  */
-function _Underscores_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( '_Underscores_custom_header_args', array(
+function cambridge_glass_light_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'cambridge_glass_light_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => '_Underscores_header_style',
+		'wp-head-callback'       => 'cambridge_glass_light_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', '_Underscores_custom_header_setup' );
+add_action( 'after_setup_theme', 'cambridge_glass_light_custom_header_setup' );
 
-if ( ! function_exists( '_Underscores_header_style' ) ) :
+if ( ! function_exists( 'cambridge_glass_light_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see _Underscores_custom_header_setup().
+ * @see cambridge_glass_light_custom_header_setup().
  */
-function _Underscores_header_style() {
+function cambridge_glass_light_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

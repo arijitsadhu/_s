@@ -4,14 +4,32 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _Underscores
+ * @package cambridge_glass_light
  */
 
+if ( has_post_thumbnail() )
+	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'cambridge_glass_light' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php get_post_type(); ?>
 	<header class="entry-header">
-		<?php
+
+		<?php if ( has_post_thumbnail()) :
+			if ( is_front_page() && is_home() ) : ?>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+				<?php the_post_thumbnail('large'); ?>
+				</a>
+
+				<!-- div class="entry-thumbnail" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div -->
+
+			<?php else:
+				the_post_thumbnail();
+			endif;
+		endif; ?>
+
+
+ 		<?php
 		if ( is_single() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
@@ -20,28 +38,34 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php _Underscores_posted_on(); ?>
+			<?php cambridge_glass_light_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
+	<?php
+	if (!( is_front_page() && is_home() )) : ?>
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_Underscores' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'cambridge_glass_light' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_Underscores' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cambridge_glass_light' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php _Underscores_entry_footer(); ?>
+		<?php cambridge_glass_light_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	
+	<?php
+	endif; ?>
 </article><!-- #post-## -->

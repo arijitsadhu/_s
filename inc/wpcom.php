@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package _Underscores
+ * @package cambridge_glass_light
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function _Underscores_wpcom_setup() {
+function cambridge_glass_light_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,4 +26,4 @@ function _Underscores_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', '_Underscores_wpcom_setup' );
+add_action( 'after_setup_theme', 'cambridge_glass_light_wpcom_setup' );
