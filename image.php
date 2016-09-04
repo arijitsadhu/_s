@@ -4,7 +4,7 @@
  *
   * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package _Underscores
  */
 
 get_header(); ?>
@@ -15,8 +15,8 @@ get_header(); ?>
 
 				<nav id="image-navigation" class="navigation image-navigation">
 					<div class="nav-links">
-						<div class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous Image', '_s' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next Image &rarr;', '_s' ) ); ?></div>
+						<div class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous Image', '_Underscores' ) ); ?></div>
+						<div class="nav-next"><?php next_image_link( false, __( 'Next Image &rarr;', '_Underscores' ) ); ?></div>
 					</div><!-- .nav-links -->
 				</nav><!-- .image-navigation -->
 
@@ -26,7 +26,7 @@ get_header(); ?>
 
 					if ( 'post' === get_post_type() ) : ?>
 					<div class="entry-meta">
-						<?php _s_posted_on(); ?>
+						<?php _Underscores_posted_on(); ?>
 					</div><!-- .entry-meta -->
 					<?php
 					endif; ?>
@@ -42,7 +42,7 @@ get_header(); ?>
 							 *
 							 * @param string $image_size Image size. Default 'large'.
 							 */
-							$image_size = apply_filters( '_s_attachment_size', 'large' );
+							$image_size = apply_filters( '_Underscores_attachment_size', 'large' );
 
 							echo wp_get_attachment_image( get_the_ID(), $image_size );
 						?>
@@ -58,19 +58,19 @@ get_header(); ?>
 					<?php
 						the_content( sprintf(
 							/* translators: %s: Name of current post. */
-							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ), array( 'span' => array( 'class' => array() ) ) ),
+							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_Underscores' ), array( 'span' => array( 'class' => array() ) ) ),
 							the_title( '<span class="screen-reader-text">"', '"</span>', false )
 						) );
 
 						wp_link_pages( array(
-							'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_Underscores' ),
 							'after'  => '</div>',
 						) );
 					?>
 				</div><!-- .entry-content -->
 
 				<footer class="entry-footer">
-					<?php _s_entry_footer(); ?>
+					<?php _Underscores_entry_footer(); ?>
 				</footer><!-- .entry-footer -->
 			</article><!-- #post-## -->
 
