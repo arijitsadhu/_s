@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package cambridge_glass_light
+ * @package jacky
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function cambridge_glass_light_wpcom_setup() {
+function jacky_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,4 +26,4 @@ function cambridge_glass_light_wpcom_setup() {
 		);
 	}
 }
-add_action( 'after_setup_theme', 'cambridge_glass_light_wpcom_setup' );
+add_action( 'after_setup_theme', 'jacky_wpcom_setup' );

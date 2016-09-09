@@ -19,6 +19,11 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
+	wp.customize( 'copyright', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-copyright' ).text( to );
+		} );
+	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {

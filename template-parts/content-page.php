@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package cambridge_glass_light
+ * @package jacky
  */
 
 ?>
@@ -19,7 +19,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cambridge_glass_light' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jacky' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -31,7 +31,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'cambridge_glass_light' ),
+						esc_html__( 'Edit %s', 'jacky' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
 					'<span class="edit-link">',

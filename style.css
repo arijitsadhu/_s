@@ -1,12 +1,12 @@
 /*
-Theme Name: Cambridge Glass Light
+Theme Name: jacky
 Theme URI: http://arijit.com/
 Author: Arijit Sadhu
 Author URI: http://arijit.com/
-Description: Simple modern HTML5 responisve theme suitable for photo galleries based on Underscores theme.
+Description: Simple modern HTML5 responsive theme based on Underscores theme.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: cambridge_glass_light
+Text Domain: jacky
 Tags:
 
 This theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
@@ -143,7 +143,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 0;
+	margin: 1em 40px;
 }
 
 hr {
@@ -259,7 +259,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: economica, Tahoma, Geneva, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -409,19 +409,19 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid silver;
-	border-radius: 3px;
+	font-family: play, Tahoma, Geneva, sans-serif;
+	padding: 5px 15px 5px 15px;
+	color: darkgreen;
+	border: 1px solid darkgreen;
+	border-radius: 5px;
 	background: white;
-	transition: background .25s ease-in-out;
-	-moz-transition: background .25s ease-in-out;
-	-webkit-transition: background .25s ease-in-out;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: silver;
+	border: 2px solid darkgreen;
 
 }
 
@@ -433,7 +433,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: silver;
+	border-color: darkgreen;
 }
 
 input[type="text"],
@@ -452,15 +452,15 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: grey;
-	border: 1px solid silver;
-	border-radius: 3px;
-	padding: 3px;
+	color: darkgreen;
+	border: 1px solid darkgreen;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 select {
-	border: 2px solid silver;
-	border-radius: 3px;
+	border: 1px solid darkgreen;
+	border-radius: 5px;
 }
 
 input[type="text"]:focus,
@@ -479,7 +479,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+	color: silver;
 }
 
 textarea {
@@ -494,13 +494,13 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	text-decoration: none;
-	color: black;
+	color: darkgreen;
 	transition: color .25s ease-in-out;
 	-moz-transition: color .25s ease-in-out;
 	-webkit-transition: color .25s ease-in-out;}
 
 a:visited {
-	color: black;
+	color: darkgreen;
 }
 
 a:hover,
@@ -521,6 +521,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .site-header {
+	font-family: crimson-text, "Times New Roman", Times, serif;
 	min-height: 3.5em;
 }
 
@@ -529,6 +530,7 @@ a:active {
 }
 
 .site-header img {
+	margin-top: 3.5em;
 	width: 100%;
 }
 
@@ -537,8 +539,8 @@ a:active {
 	width: 100%;
 	background: rgb(255, 255, 255);
 	background: rgba(255, 255, 255, 0.7);
+	border-bottom: 1px solid silver;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	color: black;	
 	position:fixed;
 	z-index: 99999;
 	padding: 1em;
@@ -546,10 +548,7 @@ a:active {
 }
 
 .site-description {
-	position: absolute;
-	top: 4em;
-	width: 100%;
-    text-align: center;
+	display: none;
 }
 
 .main-navigation {
@@ -575,8 +574,9 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color: black;	
+	color: darkgreen;	
 	padding: 1em;
+	border-left: 1px solid silver;
 	transition: background .25s ease-in-out;
 	-moz-transition: background .25s ease-in-out;
 	-webkit-transition: background .25s ease-in-out;
@@ -608,7 +608,6 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-	background: silver;
 }
 
 .main-navigation ul ul :hover > a,
@@ -648,6 +647,17 @@ a:active {
 	.main-navigation ul ul li.focus > ul {
 		left: 100%;
 	}
+
+	.main-navigation li:hover > a,
+	.main-navigation li.focus > a {
+		border-bottom: 5px solid darkgreen;
+	}
+
+	.main-navigation ul ul li:hover > a,
+	.main-navigation ul ul li.focus > a {
+		border-bottom: none;
+		border-left: 5px solid darkgreen;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -655,6 +665,9 @@ a:active {
 		background-color: transparent;
 		border: none;
 		padding: 1em;
+		margin: 0;
+		border-left: 1px solid silver;
+		border-radius: 0;
 	}
 	.main-navigation ul {
 		position: fixed;
@@ -664,9 +677,11 @@ a:active {
 		background: rgb(255, 255, 255);
 		background: rgba(255, 255, 255, 0.7);
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		border-bottom: 1px solid silver;
 	}
 	.main-navigation li {
 		float: none;
+		border-top: 1px solid silver;
 	}
 	.main-navigation ul ul {
 		float: none;
@@ -675,6 +690,11 @@ a:active {
 		left: 0.5em;
 	}
 	.main-navigation ul ul a {
+	}
+
+	.main-navigation li:hover > a,
+	.main-navigation li.focus > a {
+		border-left: 5px solid darkgreen;
 	}
 }
 
@@ -690,6 +710,7 @@ a:active {
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
+	text-align: center;
 	width: 50%;
 	padding:0 20px 0 10px;
 	background:url(images/prev-img.gif) no-repeat center right;
@@ -700,7 +721,7 @@ a:active {
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
 	float: right;
-	text-align: right;
+	text-align: center;
 	width: 50%;
 	padding:0 20px 0 10px;
 	background:url(images/next-img.gif) no-repeat center right;
@@ -804,16 +825,28 @@ a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	/*margin: 0 0 1.5em;*/
+	margin: 0 0 1.5em;
 }
 
 .widget-title {
-	font-size: smaller;
+	font-size: medium;
+	border-bottom: 1px solid silver;
 }
 
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
+}
+
+.widget-area h2 {
+		margin: 0;
+
+}
+
+.widget-area ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 }
 
 /*--------------------------------------------------------------
@@ -827,6 +860,7 @@ a:active {
 }
 
 .hentry {
+	margin: 0 0 1.5em;
 }
 
 .byline,
@@ -842,7 +876,8 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em;
+	font-family: crimson-text, "Times New Roman", Times, serif;
+	margin: 1.5em 0 0;
 }
 
 .page-links {
@@ -850,75 +885,18 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+.entry-content .entry-attachment {
+	text-align: center;
+}
+
 .entry-header {
-	padding: 1em;
-}
-
-.home .entry-title {
-	padding: .25em;
-	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	margin: 0;
-}
-
-.has-post-thumbnail .entry-header {
-	position: relative;
-	overflow: hidden;
-	height: 200px;
-	width: 100%;
-	padding: 0;
-}
-
-.home .entry-header {
-	float: left;
-	height: auto;
-	width: 50%;
-	padding: 0;
-}
-
-@media screen and (max-width: 600px) {
-	.home .entry-header {
-		width: 100%;
-	}
-}
-
-.has-post-thumbnail .entry-title {
-	position: absolute;
-	top: 0;
-	padding: .25em;
-	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	margin: 0;
-}
-
-.has-post-thumbnail .entry-meta {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: .25em;
-	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-}
-
-.entry-header .attachment-post-thumbnail {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+	font-family: crimson-text, "Times New Roman", Times, serif;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.comments-area {
-	padding: 1em;
-}
-
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1035,6 +1013,7 @@ object {
 .content-area {
 	float: left;
 	width: 75%;
+	padding: 2em;
 }
 
 .site-main {
@@ -1044,15 +1023,24 @@ object {
 	float: right;
 	overflow: hidden;
 	width: 25%;
-	padding: 1em;
+	height: auto;
+	padding: 2em;
 	background: rgb(255, 255, 255);
 	background: rgba(255, 255, 255, 0.7);
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	/*border-left: 1px solid silver;*/
 }
 
 .site-footer {
+	color: silver;
 	clear: both;
 	width: 100%;
+	text-align: center;
+	padding: 2em;
+	background: grey;
+}
+
+.site-footer a {
+	color: silver;
 }
 
 @media screen and (max-width: 600px) {
@@ -1062,5 +1050,49 @@ object {
 	.site-content .widget-area {
 		width: 100%;
 	}
+}
+
+.edit-link {
+	float: right;
+}
+
+
+@font-face {
+    font-family: 'Genericons';
+    src: url('genericons/genericons.eot');
+    src: url('genericons/genericons.eot?#iefix') format('embedded-opentype'),
+         url('genericons/genericons.woff') format('woff'),
+         url('genericons/genericons.ttf') format('truetype'),
+         url('genericons/genericons.svg#genericonsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.entry-meta {
+	display: none;
+}
+
+.entry-meta .entry-comments-link:before {
+	content: '\f108';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 16px/1 'Genericons';
+	vertical-align: top;
+}
+
+.entry-meta .entry-categories:before {
+	content: '\f301';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 22px/1 'Genericons';
+	vertical-align: top;
+}
+
+.edit-link:before {
+	content: '\f411';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 22px/1 'Genericons';
+	vertical-align: top;
 }
 

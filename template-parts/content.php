@@ -4,11 +4,9 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package cambridge_glass_light
+ * @package jacky
  */
 
-if ( has_post_thumbnail() )
-	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'cambridge_glass_light' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -20,8 +18,6 @@ if ( has_post_thumbnail() )
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
 				<?php the_post_thumbnail('large'); ?>
 				</a>
-
-				<!-- div class="entry-thumbnail" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div -->
 
 			<?php else:
 				the_post_thumbnail();
@@ -38,7 +34,7 @@ if ( has_post_thumbnail() )
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php cambridge_glass_light_posted_on(); ?>
+			<?php jacky_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -47,23 +43,29 @@ if ( has_post_thumbnail() )
 	<?php
 	if (!( is_front_page() && is_home() )) : ?>
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'cambridge_glass_light' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+		<?php if (!is_single()) : ?>
+			<div class="entry-summary">
+				<?php the_excerpt(); ?>
+			</div><!-- .entry-summary -->
+		<?php else : ?>
+			<div class="entry-content">
+				<?php
+					the_content( sprintf(
+						/* translators: %s: Name of current post. */
+						wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'jacky' ), array( 'span' => array( 'class' => array() ) ) ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'cambridge_glass_light' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jacky' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div><!-- .entry-content -->
+		<?php endif; ?>
 
 	<footer class="entry-footer">
-		<?php cambridge_glass_light_entry_footer(); ?>
+		<?php jacky_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 	
 	<?php

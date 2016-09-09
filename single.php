@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package cambridge_glass_light
+ * @package jacky
  */
 
 get_header(); ?>

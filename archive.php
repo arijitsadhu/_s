@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package cambridge_glass_light
+ * @package jacky
  */
 
 get_header(); ?>
