@@ -13,17 +13,11 @@
 <?php get_post_type(); ?>
 	<header class="entry-header">
 
-		<?php if ( has_post_thumbnail()) :
-			if ( is_front_page() && is_home() ) : ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-				<?php the_post_thumbnail('large'); ?>
-				</a>
-
-			<?php else:
-				the_post_thumbnail();
-			endif;
-		endif; ?>
-
+		<?php if ( has_post_thumbnail() && !is_single() ) : ?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+			<?php the_post_thumbnail('large'); ?>
+			</a>
+		<?php endif; ?>
 
  		<?php
 		if ( is_single() ) :

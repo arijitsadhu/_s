@@ -26,6 +26,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
+			<?php jacky_the_custom_logo(); ?>
 			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php
 			$description = get_bloginfo( 'description', 'display' );
@@ -40,10 +41,12 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 
+		<ul class="lang-navigation"><?php if ( function_exists('pll_the_languages') ) pll_the_languages(array('show_flags'=>1,'show_names'=>0)); ?></ul>
+
 		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+		<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"> -->
 			<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-		</a>
+		<!-- </a> -->
 		<?php endif; // End header image check. ?>
 	</header><!-- #masthead -->
 

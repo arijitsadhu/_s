@@ -216,6 +216,11 @@ input[type="number"]::-webkit-outer-spin-button {
 	height: auto;
 }
 
+input[type="search"] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
@@ -259,7 +264,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: economica, Tahoma, Geneva, sans-serif;
+	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -271,6 +276,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: baumans, sans-serif;
 	clear: both;
 }
 
@@ -409,19 +415,21 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	font-family: play, Tahoma, Geneva, sans-serif;
+	color: black;
 	padding: 5px 15px 5px 15px;
-	color: darkgreen;
-	border: 1px solid darkgreen;
-	border-radius: 5px;
+	border: 2px solid grey;
+	border-radius: 1em;
 	background: white;
+	transition: background .25s ease-in-out;
+	-moz-transition: background .25s ease-in-out;
+	-webkit-transition: background .25s ease-in-out;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border: 2px solid darkgreen;
+	background: lightgrey;
 
 }
 
@@ -433,7 +441,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: darkgreen;
+	border-color: grey;
 }
 
 input[type="text"],
@@ -452,15 +460,15 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: darkgreen;
-	border: 1px solid darkgreen;
-	border-radius: 5px;
+	color: black;
+	border: 2px solid grey;
+	border-radius: 1em;
 	padding: 5px;
 }
 
 select {
-	border: 1px solid darkgreen;
-	border-radius: 5px;
+	border: 2px solid grey;
+	border-radius: 1em;
 }
 
 input[type="text"]:focus,
@@ -479,7 +487,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: silver;
+	color: black;
 }
 
 textarea {
@@ -494,13 +502,13 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	text-decoration: none;
-	color: darkgreen;
+	color: black;
 	transition: color .25s ease-in-out;
 	-moz-transition: color .25s ease-in-out;
 	-webkit-transition: color .25s ease-in-out;}
 
 a:visited {
-	color: darkgreen;
+	color: black;
 }
 
 a:hover,
@@ -521,8 +529,9 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .site-header {
-	font-family: crimson-text, "Times New Roman", Times, serif;
+	font-family: baumans, sans-serif;
 	min-height: 3.5em;
+	position: relative;
 }
 
 .site-header p {
@@ -534,13 +543,20 @@ a:active {
 	width: 100%;
 }
 
+.site-branding img {
+	width: auto;
+	position: absolute;
+	opacity: 0.7;
+	max-height: 100%;
+}
+
 .site-title {
 	display: block;
 	width: 100%;
 	background: rgb(255, 255, 255);
 	background: rgba(255, 255, 255, 0.7);
 	border-bottom: 1px solid silver;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 	position:fixed;
 	z-index: 99999;
 	padding: 1em;
@@ -548,19 +564,37 @@ a:active {
 }
 
 .site-description {
-	display: none;
+	position: absolute;
+	padding: 4em;
+}
+
+.lang-navigation {
+	margin-top: 5em;
+	right: 2em;
+	position: absolute;
+	list-style: none;
+}
+
+.site-header .lang-item {
+	display: inline;
+	padding: 0.5em;
+}
+
+.site-header ul img {
+	margin-top: 0;
+	width: auto;
 }
 
 .main-navigation {
 	display: block;
 	float: right;
 	right: 0;
-	position:fixed;
+	position: fixed;
 	z-index: 99999;
 }
 
 .main-navigation ul {
-	display: none;
+	display: block;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -574,7 +608,6 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	color: darkgreen;	
 	padding: 1em;
 	border-left: 1px solid silver;
 	transition: background .25s ease-in-out;
@@ -608,6 +641,7 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+	border-bottom: 5px solid grey;
 }
 
 .main-navigation ul ul :hover > a,
@@ -625,43 +659,33 @@ a:active {
 }
 
 /* Small menu. */
-.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
 
-@media screen and (min-width: 600px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-
-	.main-navigation ul li:hover > ul,
-	.main-navigation ul li.focus > ul {
-		left: auto;
-	}
-
-	.main-navigation ul ul li:hover > ul,
-	.main-navigation ul ul li.focus > ul {
-		left: 100%;
-	}
-
-	.main-navigation li:hover > a,
-	.main-navigation li.focus > a {
-		border-bottom: 5px solid darkgreen;
-	}
-
-	.main-navigation ul ul li:hover > a,
-	.main-navigation ul ul li.focus > a {
-		border-bottom: none;
-		border-left: 5px solid darkgreen;
-	}
+.menu-toggle {
+	display: none;
 }
 
-@media screen and (max-width: 600px) {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation ul ul li:hover > a,
+.main-navigation ul ul li.focus > a {
+	border-left: 5px solid grey;
+	border-bottom: none;
+}
+
+@media screen and (max-width: 700px) {
 	.menu-toggle {
+		display: block;
 		background-color: transparent;
 		border: none;
 		padding: 1em;
@@ -670,8 +694,8 @@ a:active {
 		border-radius: 0;
 	}
 	.main-navigation ul {
+		display: none;
 		position: fixed;
-		top: 3.5em;
 		width: 100%;
 		left: 0;
 		background: rgb(255, 255, 255);
@@ -694,7 +718,8 @@ a:active {
 
 	.main-navigation li:hover > a,
 	.main-navigation li.focus > a {
-		border-left: 5px solid darkgreen;
+		border-left: 5px solid grey;
+		border-bottom: none;
 	}
 }
 
@@ -825,6 +850,8 @@ a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
+	width: 300px;
+	float: left;
 	margin: 0 0 1.5em;
 }
 
@@ -855,12 +882,16 @@ a:active {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.page-header .page-title {
+	text-align: center;
+}
+
 .sticky {
 	display: block;
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 4em;
 }
 
 .byline,
@@ -876,7 +907,6 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	font-family: crimson-text, "Times New Roman", Times, serif;
 	margin: 1.5em 0 0;
 }
 
@@ -890,8 +920,40 @@ a:active {
 }
 
 .entry-header {
-	font-family: crimson-text, "Times New Roman", Times, serif;
+	position: relative;
 	text-align: center;
+	margin: 0 10%;
+}
+
+.archive .entry-header img,
+.has-post-thumbnail .entry-header img {
+	width: 100%;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.archive h2 .entry-title,
+.has-post-thumbnail .entry-header h2 {
+	position: absolute;
+	bottom: .25em;
+	width: 100%;
+	margin: 0;
+	background: rgb(255, 255, 255);
+	background: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 700px) {
+	.entry-header {
+		margin: 0;
+	}
+}
+
+
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -1010,59 +1072,77 @@ object {
 	display: block;
 }
 
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
 .content-area {
-	float: left;
-	width: 75%;
-	padding: 2em;
+	width: 100%;
+	clear: both;
+	padding: 0 10%;
 }
 
 .site-main {
 }
 
+.site-content {
+}	
+
 .site-content .widget-area {
-	float: right;
+	font-size: smaller;
+	font-weight: lighter;
+	width: 100%;
+	clear: both;
 	overflow: hidden;
-	width: 25%;
-	height: auto;
-	padding: 2em;
-	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
-	/*border-left: 1px solid silver;*/
+	border-top: 1px solid silver;
+	padding: 4em;
+	color: silver;
+	background: grey;
+}
+
+.site-content .widget-area a:hover {
+	color: silver;
 }
 
 .site-footer {
-	color: silver;
+	font-size: smaller;
+	font-weight: lighter;
 	clear: both;
 	width: 100%;
 	text-align: center;
 	padding: 2em;
-	background: grey;
+	color: grey;
+	background: silver;
 }
 
 .site-footer a {
-	color: silver;
-}
-
-@media screen and (max-width: 600px) {
-	.content-area {
-		width: 100%;
-	}
-	.site-content .widget-area {
-		width: 100%;
-	}
+	color: grey;
 }
 
 .edit-link {
 	float: right;
 }
 
+.cat-links {
+	display: none;
+}
 
+@media screen and (max-width: 700px) {
+	.content-area,
+	.site-content .widget-area {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+}
+
+/*--------------------------------------------------------------
+## Genericons
+--------------------------------------------------------------*/
 @font-face {
     font-family: 'Genericons';
-    src: url('genericons/genericons.eot');
-    src: url('genericons/genericons.eot?#iefix') format('embedded-opentype'),
-         url('genericons/genericons.woff') format('woff'),
-         url('genericons/genericons.ttf') format('truetype'),
+    src: url('genericons/Genericons.eot');
+    src: url('genericons/Genericons.eot?#iefix') format('embedded-opentype'),
+         url('genericons/Genericons.woff') format('woff'),
+         url('genericons/Genericons.ttf') format('truetype'),
          url('genericons/genericons.svg#genericonsregular') format('svg');
     font-weight: normal;
     font-style: normal;
@@ -1090,6 +1170,28 @@ object {
 
 .edit-link:before {
 	content: '\f411';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 22px/1 'Genericons';
+	vertical-align: top;
+}
+
+/*.image-navigation .nav-previous:before,*/
+.comment-navigation .nav-previous:before,
+.posts-navigation .nav-previous:before,
+.post-navigation .nav-previous:before {
+	content: '\f430';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 22px/1 'Genericons';
+	vertical-align: top;
+}
+
+/*.image-navigation .nav-next:after,*/
+.comment-navigation .nav-next:after,
+.posts-navigation .nav-next:after,
+.post-navigation .nav-next:after {
+	content: '\f429';
 	display: inline-block;
 	-webkit-font-smoothing: antialiased;
 	font: normal 22px/1 'Genericons';
