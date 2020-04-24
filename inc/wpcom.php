@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress.com-specific functions and definitions.
+ * WordPress.com-specific functions and definitions
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
@@ -17,6 +17,8 @@ function jacky_wpcom_setup() {
 
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
+		// Whitelist wpcom specific variable intended to be overruled.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$themecolors = array(
 			'bg'     => '',
 			'border' => '',

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
  * Contains the closing of the #content div and all content after.
  *
@@ -11,9 +11,7 @@
 
 ?>
 
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<div class="site-copyright"><?php echo get_theme_mod( 'copyright'); ?></div>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jacky' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jacky' ), 'WordPress' ); ?></a>

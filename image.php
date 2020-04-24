@@ -34,7 +34,7 @@ get_header(); ?>
 					<div class="entry-attachment">
 						<?php
 							/**
-							 * Filter the default _s image attachment size.
+							 * Filter the default jacky image attachment size.
 							 *
 							 * @since Twenty Sixteen 1.0
 							 *
