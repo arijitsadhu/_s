@@ -154,9 +154,15 @@ function jacky_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'jacky_font', '//use.edgefonts.net/baumans.js' );
+	// wp_enqueue_script( 'jacky_font', '//use.edgefonts.net/baumans.js' );
 }
 add_action( 'wp_enqueue_scripts', 'jacky_scripts' );
+
+//Enqueue the Dashicons script
+add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
+function load_dashicons_front_end() {
+wp_enqueue_style( 'dashicons' );
+}
 
 /**
  * Implement the Custom Header feature.

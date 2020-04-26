@@ -31,6 +31,21 @@ function jacky_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	// Add Footer Copyright Section
+	$wp_customize->add_section( 'footer_copyright' , array(
+	    'title' => __( 'Footer Copyright', 'jacky' ),
+	    'priority' => 30,
+	    'description' => __( 'Enter copyright message.', 'jacky' )
+	) );
+
+	// Add Copyright Setting
+	$wp_customize->add_setting( 'copyright' , array( 'default' => '' ));
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'copyright', array(
+	    'label' => __( 'Copyright', 'jacky' ),
+	    'section' => 'footer_copyright',
+	    'settings' => 'copyright',
+	) ) );
 }
 add_action( 'customize_register', 'jacky_customize_register' );
 

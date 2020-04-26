@@ -16,7 +16,7 @@
 			<div class="site-copyright"><?php echo get_theme_mod( 'copyright'); ?></div>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jacky' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'jacky' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jacky' ), 'jacky', '<a href="http://arijit.com/" rel="designer">Arijit Sadhu</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'jacky' ), 'jacky', '<a href="https://fountainmedia.net" rel="designer">FountainMedia</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

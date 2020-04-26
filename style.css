@@ -367,6 +367,14 @@ template {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Kirvy';
+    src: url('kirvy/Kirvy-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body,
 button,
 input,
@@ -385,8 +393,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: baumans, sans-serif;
+	font-family: Kirvy, sans-serif;
 	clear: both;
+	color: #ff6600;
 }
 
 p {
@@ -475,9 +484,9 @@ q {
 }
 
 hr {
-	background-color: #ccc;
+	background-color: #99cccc;
 	border: 0;
-	height: 1px;
+	height: 2px;
 	margin-bottom: 1.5em;
 }
 
@@ -524,12 +533,12 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	color: black;
+	color: white;
 	padding: 5px 15px 5px 15px;
-	border: 2px solid deepskyblue;
+	border: 2px solid #99cccc;
 	border-radius: 1em;
-	box-shadow: 0 0 2px 2px deepskyblue;
-	background: white;
+	box-shadow: 0 0 2px 2px #99cccc;
+	background: #99cccc;
 	transition: background .25s ease-in-out;
 	-moz-transition: background .25s ease-in-out;
 	-webkit-transition: background .25s ease-in-out;
@@ -539,8 +548,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border: 2px solid gold;
-	box-shadow: 0 0 2px 2px gold;
+	border: 2px solid #ffcc00;
+	box-shadow: 0 0 2px 2px #ffcc00;
 
 }
 
@@ -552,8 +561,8 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border: 2px solid gold;
-	box-shadow: 0 0 2px 2px gold;
+	border: 2px solid #ffcc00;
+	box-shadow: 0 0 2px 2px #ffcc00;
 }
 
 input[type="text"],
@@ -573,15 +582,15 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: black;
-	border: 2px solid deepskyblue;
-	box-shadow: 0 0 2px 2px deepskyblue;
+	border: 2px solid #99cccc;
+	box-shadow: 0 0 2px 2px #99cccc;
 	border-radius: 1em;
 	padding: 5px;
 }
 
 select {
-	border: 2px solid deepskyblue;
-	box-shadow: 0 0 2px 2px deepskyblue;
+	border: 2px solid #99cccc;
+	box-shadow: 0 0 2px 2px #99cccc;
 	border-radius: 1em;
 }
 
@@ -616,19 +625,19 @@ textarea {
 --------------------------------------------------------------*/
 a {
 	text-decoration: none;
-	color: black;
+	color: #003366;
 	transition: color .25s ease-in-out;
 	-moz-transition: color .25s ease-in-out;
 	-webkit-transition: color .25s ease-in-out;}
 
 a:visited {
-	color: black;
+	color: #003366;
 }
 
 a:hover,
 a:focus,
 a:active {
-	border-bottom: 2px solid gold;
+	border-bottom: 2px solid #ffcc00;
 }
 
 a:focus {
@@ -643,7 +652,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .site-header {
-	font-family: baumans, sans-serif;
+	font-family: Kirvy, sans-serif;
 	min-height: 3.5em;
 	position: relative;
 }
@@ -670,14 +679,17 @@ a:active {
 	width: 100%;
 	height: 50px;
 	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0.5);
 	border-bottom: 1px solid silver;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 	position:fixed;
 	z-index: 80000;
-	padding: 0 70px;
+	padding: 0;
 	margin: 0;
-	font-weight: bold;
+}
+
+.site-title a {
+	display: none;
 }
 
 .site-description {
@@ -727,7 +739,7 @@ a:active {
 	display: block;
 	text-decoration: none;
 	padding: 1em;
-	border-left: 1px solid silver;
+	border-left: 2px solid #99cccc;
 	transition: background .25s ease-in-out;
 	-moz-transition: background .25s ease-in-out;
 	-webkit-transition: background .25s ease-in-out;
@@ -740,7 +752,7 @@ a:active {
 	left: -999em;
 	z-index: 99999;
 	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0.5);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -759,7 +771,7 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-	border-bottom: 5px solid gold;
+	border-bottom: 5px solid #ffcc00;
 }
 
 .main-navigation ul ul :hover > a,
@@ -797,7 +809,7 @@ a:active {
 
 .main-navigation ul ul li:hover > a,
 .main-navigation ul ul li.focus > a {
-	border-left: 5px solid gold;
+	border-left: 5px solid #ffcc00;
 	border-bottom: none;
 }
 
@@ -805,12 +817,16 @@ a:active {
 
 .menu-toggle {
 	display: block;
-	background-color: transparent;
+	font-family: dashicons;
+	color: white;
+	background-color: #003366;
 	border: none;
 	height: 50px;
-	border-left: 1px solid silver;
 	border-radius: 0;
 	box-shadow: unset;
+	font-size: 30px;
+	padding: 0 0.5em;
+	margin: 0;
 }
 .main-navigation ul {
 	display: none;
@@ -820,11 +836,11 @@ a:active {
 	background: rgb(255, 255, 255);
 	background: rgba(255, 255, 255, 0.7);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	border-bottom: 1px solid silver;
+	border-bottom: 2px solid #99cccc;
 }
 .main-navigation li {
 	float: none;
-	border-top: 1px solid silver;
+	border-top: 2px solid #99cccc;
 }
 .main-navigation ul ul {
 	float: none;
@@ -837,7 +853,7 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-	border-left: 5px solid gold;
+	border-left: 5px solid #ffcc00;
 	border-bottom: none;
 }
 
@@ -978,9 +994,10 @@ a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	width: 300px;
-	float: left;
+	text-align: left;
+	display: inline-block;
 	margin: 2em;
+	vertical-align: top;
 }
 
 .widget-title {
@@ -1060,26 +1077,30 @@ a:active {
 	margin: 3em 10%;
 }
 
-.entry-header img,
 .post-thumbnail img {
 	width: 80%;
-	margin: -2.5em 10%;
+	margin: 0 10%;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 h2 .entry-title,
 .has-post-thumbnail .entry-header h2 {
 	position: absolute;
-	bottom: .25em;
+	top: 0em;
 	width: 100%;
 	margin: 0;
-	background: rgb(255, 255, 255);
-	background: rgba(255, 255, 255, 0.7);
+	background: transparent;
+	background: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (max-width: 700px) {
-	.entry-header {
+	.entry-header, .post-thumbnail img {
 		margin: 0;
+		width: 100%;
+	}
+
+	h1, h2 {
+		font-size: large;
 	}
 }
 
@@ -1240,8 +1261,8 @@ dx	display: inline-block;
 	clear: both;
 	overflow: hidden;
 	color: white;
-	background: deepskyblue;
-	box-shadow: 0 0 1em 1em deepskyblue;
+	background: #ff6600;
+	text-align: center;
 }
 
 .widget-area a {
@@ -1255,12 +1276,12 @@ dx	display: inline-block;
 	width: 100%;
 	text-align: center;
 	padding: 2em;
-	color: white;
-	background: goldenrod;
+	color: #99cccc;
+	background: #003366;
 }
 
 .site-footer a {
-	color: white;
+	color: #99cccc;
 }
 
 .edit-link {
@@ -1280,66 +1301,51 @@ dx	display: inline-block;
 }
 
 /*--------------------------------------------------------------
-## Genericons
+## Dashicons
 --------------------------------------------------------------*/
-@font-face {
-    font-family: 'Genericons';
-    src: url('genericons/Genericons.eot');
-    src: url('genericons/Genericons.eot?#iefix') format('embedded-opentype'),
-         url('genericons/Genericons.woff') format('woff'),
-         url('genericons/Genericons.ttf') format('truetype'),
-         url('genericons/genericons.svg#genericonsregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .entry-meta {
 	display: none;
 }
 
 .entry-meta .entry-comments-link:before {
-	content: '\f108';
+	content: '\f125';
 	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	font: normal 16px/1 'Genericons';
+	font: normal 16px/1 'dashicons';
 	vertical-align: top;
 }
 
 .entry-meta .entry-categories:before {
-	content: '\f301';
+	content: '\f318';
 	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	font: normal 22px/1 'Genericons';
+	font: normal 22px/1 'dashicons';
 	vertical-align: top;
 }
 
 .edit-link:before {
-	content: '\f411';
+	content: '\f464';
 	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	font: normal 22px/1 'Genericons';
+	font: normal 22px/1 'dashicons';
 	vertical-align: top;
 }
 
-/*.image-navigation .nav-previous:before,*/
+.image-navigation .nav-previous:before,
 .comment-navigation .nav-previous:before,
 .posts-navigation .nav-previous:before,
 .post-navigation .nav-previous:before {
-	content: '\f430';
+	content: '\f340';
 	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	font: normal 22px/1 'Genericons';
+	font: normal 22px/1 'dashicons';
 	vertical-align: top;
 }
 
-/*.image-navigation .nav-next:after,*/
+.image-navigation .nav-next:after,
 .comment-navigation .nav-next:after,
 .posts-navigation .nav-next:after,
 .post-navigation .nav-next:after {
-	content: '\f429';
+	content: '\f344';
 	display: inline-block;
-	-webkit-font-smoothing: antialiased;
-	font: normal 22px/1 'Genericons';
+	font: normal 22px/1 'dashicons';
 	vertical-align: top;
 }
 
